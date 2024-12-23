@@ -19,3 +19,41 @@ install_doc: install_min
 prepare:
 	rm -rf build
 	mkdir build
+
+dependency_graph:
+	cd build && cmake .. --graphviz=graph.dot && dot -Tpng graph.dot -o graphImage.png
+
+git_submodule:
+	git submodule update --init --recursive
+
+git_submodule_add:
+	git submodule add <github module url> <module name>
+
+doxy_documentation:
+	doxygen -g
+
+doxygen_document_generate:
+	cd docs && doxygen
+
+
+clang_tidy_install:
+	sudo apt-get install clang-tidy
+
+
+cmake_format_install:
+	pip3 install cmake-format
+
+install_graphviz:
+	sudo apt-get install graphviz
+
+install_pre_commit:
+	pip3 install pre-commit
+	pre-commit install
+	pre-commit install-hooks
+
+
+precommit_run:
+	pre-commit run --all-files
+
+precommit_run_diff:
+	pre-commit run --all-files --show-diff-on-save

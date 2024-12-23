@@ -50,6 +50,7 @@ endif()
 add_cmake_format_target()
 add_clang_format_target()
 
+
 if(ENABLE_SANITIZE_ADDR OR ENABLE_SANITIZE_UNDEF)
     include(Sanitizer)
     add_sanitizer_flags(ENABLE_SANITIZE_ADDR ENABLE_SANITIZE_UNDEF)
@@ -91,6 +92,6 @@ install(
     RUNTIME DESTINATION bin)
 
 install(
-    TARGETS "LibFoo" "LibBar"
+    TARGETS "LibCircle" "LibRectangle" "LibShape" "LibTriangle" "LibShapeFactory"
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib)

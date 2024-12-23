@@ -6,8 +6,7 @@ target_include_directories("main" PUBLIC ${LIBRARY_INCLUDES})
 
 target_link_libraries(
     "main"
-    PUBLIC "LibFoo"
-           "LibBar"
+    PUBLIC "LibShapeFactory"
            log
            argparse)
 
